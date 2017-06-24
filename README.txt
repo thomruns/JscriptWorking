@@ -4,13 +4,4 @@ This is a test file for a game of Pig practicing JavaScript techniques
 
 6/24/17 Initial commit of files includes a full working copy of the Pig Game prior to challenges modifications
 
-6/24/17 Switch branch
-
-<<<<<<< HEAD
-6/25/17 New edits to commit
-=======
-6/24/17 Edited on GitHub
-
-6/24/17 Second Edit on GitHub, testing merge.
-
-This is a new edit on README to commit document for merging from challenge_01 branch to master branch.
+6/24/17 First working branch is challenge_01 which will contain code from working on 1st challenge.
