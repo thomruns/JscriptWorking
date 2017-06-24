@@ -7,3 +7,5 @@ This is a test file for a game of Pig practicing JavaScript techniques
 6/24/17 Switch branch
 
 6/24/17 Edited on GitHub
+
+6/24/17 Second Edit on GitHub, testing merge.
