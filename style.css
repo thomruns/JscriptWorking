@@ -151,6 +151,46 @@ i {
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
 }
 
+.input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  color: white;
+  /*background-color: black;*/
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+.input-form p {
+  padding: 10px;
+  /*margin-left: -15px;*/
+  /*background-color: blue;*/
+  text-align: center;
+}
+
+input[type=text] {
+  font-size: 2rem;
+  font-family: inherit;
+  text-align: center;
+  width: 150px;
+  height: 40px;
+}
+
+input[type=button] {
+  padding: 10px;
+  background-color: #EB4D4D;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+}
+
+input[type=button]:focus{
+outline: 1px solid white;
+}
+
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
 .busted {background-color: black;

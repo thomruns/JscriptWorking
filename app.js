@@ -39,16 +39,18 @@ document.querySelector('.btn-roll').addEventListener('click' , function() { //an
       }
       // Code for challenge 1
       if(dice === 6 && dice === storedScore) {
-        //console.log("Equal to 6"); //TEST USE ONLY
+        console.log("Equal to 6"); //TEST USE ONLY
         storedScore = 0;
         document.querySelector('#score-' + activePlayer).textContent = 0;
+        scores[activePlayer] = 0;
         nextPlayer();
       } else {
-        //console.log('The value of dice is ' + dice); //TEST USE ONLY
-        //console.log('The value of roundScore is ' + roundScore); //TEST USE ONLY
-        //console.log('The value of storedScore is ' + storedScore); //TEST USE ONLY
-        //console.log ("No match on " + storedScore); //TEST USE ONLY 
+        console.log('The value of dice is ' + dice); //TEST USE ONLY
+        console.log('The value of roundScore is ' + roundScore); //TEST USE ONLY
+        console.log('The value of storedScore is ' + storedScore); //TEST USE ONLY
+        console.log ("No match on " + storedScore); //TEST USE ONLY
         storedScore = dice;
+        console.log(scores[activePlayer]);
       }
   }
 }); //end of anonymous function on btn-roll event listener
