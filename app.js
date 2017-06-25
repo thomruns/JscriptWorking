@@ -17,6 +17,8 @@ roundScore will hold the cumulative round score (becomes 0 if player rolls a 1)
 activePlayer keeps track of the active player
 gamePlaying is a boolean state variable to determine if the game is being played or a winner has been found
 */
+
+/* This value is taken from the input element  */
 var winningValue = document.getElementById('winning-value').value;
 
 init(); // call the init function to initialize a new game on page load
@@ -30,6 +32,11 @@ document.querySelector('#submitScore').addEventListener('click' , function(){
 
 document.querySelector('.btn-roll').addEventListener('click' , function() { //anonymous function as argument
   if(gamePlaying) { //if the value of gamePlaying is true (default init value)
+    if(winningValue === '') { //Make sure there is a value for the game
+      alert('Please Enter a Score Goal for This Game or lose your turn!');
+      console.log(roundScore);
+      nextPlayer();
+    }
     // 1. Create a random number
        var dice = Math.floor(Math.random() * 6) + 1; //only need this variable within the function scope
     //2. Display the result
