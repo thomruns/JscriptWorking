@@ -9,7 +9,8 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, gamePlaying; // declare initial global variables
+var scores, roundScore, activePlayer, gamePlaying; //declare initial global variables
+var storedScore = 0; // variable to store the score for challenge 1
 /*
 scores will hold the cumulative score
 roundScore will hold the cumulative round score (becomes 0 if player rolls a 1)
@@ -36,6 +37,19 @@ document.querySelector('.btn-roll').addEventListener('click' , function() { //an
         //next player turn
         nextPlayer();
       }
+      // Code for challenge 1
+      if(dice === 6 && dice === storedScore) {
+        //console.log("Equal to 6"); //TEST USE ONLY
+        storedScore = 0;
+        document.querySelector('#score-' + activePlayer).textContent = 0;
+        nextPlayer();
+      } else {
+        //console.log('The value of dice is ' + dice); //TEST USE ONLY
+        //console.log('The value of roundScore is ' + roundScore); //TEST USE ONLY
+        //console.log('The value of storedScore is ' + storedScore); //TEST USE ONLY
+        //console.log ("No match on " + storedScore); //TEST USE ONLY 
+        storedScore = dice;
+      }
   }
 }); //end of anonymous function on btn-roll event listener
 
@@ -54,6 +68,7 @@ document.querySelector('.btn-hold').addEventListener('click' , function() { //ad
      gamePlaying = false;
    } else {
      //Next player
+     storedScore = 0;
      nextPlayer();
    }
  }
@@ -93,6 +108,7 @@ function init() {
   document.querySelector('.player-1-panel').classList.remove('active');
   document.querySelector('.player-0-panel').classList.add('active');
 }
+
 
 
 /* CHALLENGES
