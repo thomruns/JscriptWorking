@@ -17,8 +17,16 @@ roundScore will hold the cumulative round score (becomes 0 if player rolls a 1)
 activePlayer keeps track of the active player
 gamePlaying is a boolean state variable to determine if the game is being played or a winner has been found
 */
+var winningValue = document.getElementById('winning-value').value;
 
 init(); // call the init function to initialize a new game on page load
+
+//code for challenge 2 //
+document.querySelector('#submitScore').addEventListener('click' , function(){
+  winningValue = document.getElementById('winning-value').value;
+});
+
+
 
 document.querySelector('.btn-roll').addEventListener('click' , function() { //anonymous function as argument
   if(gamePlaying) { //if the value of gamePlaying is true (default init value)
@@ -62,7 +70,7 @@ document.querySelector('.btn-hold').addEventListener('click' , function() { //ad
    // Update the UI
    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
    // Check if player won the game
-   if(scores[activePlayer] >= 100) {
+   if(scores[activePlayer] >= winningValue) {
      document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
      document.querySelector('.dice').style.display = 'none';
      document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
