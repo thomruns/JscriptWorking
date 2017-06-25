@@ -112,7 +112,9 @@ function init() {
   activePlayer = 0; //set the active player using index of scores array
   roundScore = 0; //set the round score to zero
   gamePlaying = true;
+
   document.querySelector('.dice').style.display = 'none'; //hide the dice graphic in class .dice
+  //document.querySelector('.dice02').style.display = 'none'; //hide the dice graphic in class .dice
   document.getElementById('score-0').textContent = '0'; //set initial value of player 1 score to 0
   document.getElementById('score-1').textContent = '0'; //set initial value of player 2 score to 0
   document.getElementById('current-0').textContent = '0'; //set initial value of player 1 roll value to 0
