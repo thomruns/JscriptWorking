@@ -35,7 +35,7 @@ document.querySelector('.btn-roll').addEventListener('click' , function() { //an
   if(gamePlaying) { //if the value of gamePlaying is true (default init value)
     if(winningValue === '') { //Make sure there is a value for the game
       alert('Please Enter a Score Goal for This Game or lose your turn!');
-      console.log(roundScore);
+      //console.log(roundScore); //TESTING USE ONLY
       nextPlayer();
     }
     // 1. Create a random number
@@ -61,21 +61,21 @@ document.querySelector('.btn-roll').addEventListener('click' , function() { //an
       }
       // Code for challenge 1
       if(dice === 6 && dice2 === 6) {
-        console.log("Double Sixes!"); //TEST USE ONLY
+        //console.log("Double Sixes!"); //TEST USE ONLY
         storedScore = 0;
         document.querySelector('#score-' + activePlayer).textContent = 0;
         scores[activePlayer] = 0;
         bustedRoll("BUSTED! Double 6s!");
         nextPlayer();
       } else {
-        console.log('The value of dice1 is ' + dice); //TEST USE ONLY
-        console.log('The value of dice2 is ' + dice2); //TEST USE ONLY
-        console.log('The value of roundScore is ' + roundScore); //TEST USE ONLY
-        console.log('The value of storedScore is ' + storedScore); //TEST USE ONLY
-        console.log ("No match on " + storedScore); //TEST USE ONLY
+        //console.log('The value of dice1 is ' + dice); //TEST USE ONLY
+        //console.log('The value of dice2 is ' + dice2); //TEST USE ONLY
+        //console.log('The value of roundScore is ' + roundScore); //TEST USE ONLY
+        //console.log('The value of storedScore is ' + storedScore); //TEST USE ONLY
+        //console.log ("No match on " + storedScore); //TEST USE ONLY
         storedScore = dice;
-        console.log([activePlayer]);
-        console.log(scores[activePlayer]);
+        //console.log([activePlayer]); //TEST USE ONLY
+        //console.log(scores[activePlayer]); //TEST USE ONLY
       }
   }
 }); //end of anonymous function on btn-roll event listener
