@@ -204,6 +204,15 @@ background-color: lightgray;
 outline: none;
 }
 
+.player0-busted, .player1-busted {
+  background-color: black;
+  color: #FF0000;
+  width: 40%;
+  margin: 0 auto;
+  padding: 12px;
+  text-align: center;
+}
+
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
 .busted {background-color: black;

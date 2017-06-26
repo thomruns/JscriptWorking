@@ -20,6 +20,7 @@ gamePlaying is a boolean state variable to determine if the game is being played
 
 /* This value is taken from the input element  */
 var winningValue = document.getElementById('winning-value').value;
+var busted = false;
 
 init(); // call the init function to initialize a new game on page load
 
@@ -54,6 +55,8 @@ document.querySelector('.btn-roll').addEventListener('click' , function() { //an
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
       } else {
         //next player turn
+        bustedRoll('You Rolled 1');
+        busted = true;
         nextPlayer();
       }
       // Code for challenge 1
@@ -62,6 +65,7 @@ document.querySelector('.btn-roll').addEventListener('click' , function() { //an
         storedScore = 0;
         document.querySelector('#score-' + activePlayer).textContent = 0;
         scores[activePlayer] = 0;
+        bustedRoll("BUSTED! Double 6s!");
         nextPlayer();
       } else {
         console.log('The value of dice1 is ' + dice); //TEST USE ONLY
@@ -70,6 +74,7 @@ document.querySelector('.btn-roll').addEventListener('click' , function() { //an
         console.log('The value of storedScore is ' + storedScore); //TEST USE ONLY
         console.log ("No match on " + storedScore); //TEST USE ONLY
         storedScore = dice;
+        console.log([activePlayer]);
         console.log(scores[activePlayer]);
       }
   }
@@ -101,7 +106,18 @@ function hideDice() { //function to hide both die
   document.querySelector('.dice02').style.display ='none'; //hide the second dice element
 }
 
+function bustedRoll(message) {
+  document.querySelector('.player' + activePlayer + '-busted').style.display = 'block';
+  document.querySelector('.player' + activePlayer + '-busted').textContent = (message);
+}
+
+function clearBusted() {
+    document.querySelector('.player' + activePlayer + '-busted').style.display = 'none';
+}
+
+
 function nextPlayer() {
+
   //next player turn
   activePlayer === 0 ? activePlayer = 1 : activePlayer = 0; //change activePlayer using terneray operator instead of if statement
   roundScore = 0;
@@ -112,6 +128,7 @@ function nextPlayer() {
   document.querySelector('.player-1-panel').classList.toggle('active'); //toggle a class attribute for player 2
   //document.querySelector('.player-0-panel').classList.remove('active'); //for reference only to show removing class
   //document.querySelector('.player-1-panel').classList.add('active'); //ref only to show adding class
+  clearBusted();
   hideDice();
   //document.querySelector('.dice').style.display ='none'; //hide the dice element
 }
@@ -137,6 +154,8 @@ function init() {
   document.querySelector('.player-0-panel').classList.remove('active');
   document.querySelector('.player-1-panel').classList.remove('active');
   document.querySelector('.player-0-panel').classList.add('active');
+  document.querySelector('.player0-busted').style.display = 'none';
+  document.querySelector('.player1-busted').style.display = 'none';
 }
 
 
